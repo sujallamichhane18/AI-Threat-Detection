@@ -1,5 +1,5 @@
 {
   "scripts": {
-    "build": "pip install -r requirements.txt -t functions"
+    "build": "echo 'Installing dependencies...' && python -m pip install --upgrade pip && python -m pip install -r requirements.txt && echo 'Copying models...' && cp anomaly_model.pkl scaler.pkl functions/ && echo 'Build complete.'"
   }
 }
