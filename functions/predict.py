@@ -2,7 +2,7 @@ import json
 import numpy as np
 import joblib
 
-# Load trained models
+# Load trained models (ensure files are in the function directory during deployment)
 model = joblib.load('anomaly_model.pkl')
 scaler = joblib.load('scaler.pkl')
 
@@ -25,7 +25,6 @@ def handler(event, context):
             'statusCode': 200,
             'body': json.dumps({'prediction': result})
         }
-
     except Exception as e:
         return {
             'statusCode': 500,
